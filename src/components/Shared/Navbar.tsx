@@ -12,7 +12,7 @@ export default function Navbar() {
         {name: 'Contact', link: '/contact'},
     ]
   return (
-<div className="navbar bg-slate-400 text-slate-900">
+<div className="bg-base-100  text-slate-900 border-b-[1px] py-2">
 <div className="navbar container mx-auto">
     <div className="navbar-start">
     <div className="dropdown">

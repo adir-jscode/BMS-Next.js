@@ -28,7 +28,7 @@ export default function Sevices() {
   return (
     <div className="container mx-auto my-20 px-4 py-8">
     <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-      Our Banking Services
+      Our Banking <span className='text-primary'>Services</span> 
     </h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {services.map((service) => (
