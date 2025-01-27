@@ -24,11 +24,17 @@ export default {
     themes: [
       {
         mytheme: {
-          "primary": "orange",
-          "secondary": "orange",
-          "accent": "#37cdbe",
-          "neutral": "#3d4451",
-          "base-100": "#ffffff",
+          primary: "#31C4F3",
+          // primary: "#FF3811",
+          secondary: "teal",
+
+          ".btn-primary": {
+            "color" : "#fff"
+          },
+
+          ".btn-outline.btn-primary:hover": {
+            "color" : "#fff"
+          },
         },
       },
       "light",
