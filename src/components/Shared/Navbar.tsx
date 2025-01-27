@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import { IoIosLogIn } from 'react-icons/io';
 
 export default function Navbar() {
     const navItems = [
@@ -60,25 +61,9 @@ export default function Navbar() {
   </div>
   <div className="navbar-end">
     {/* login icon */}
-    <a className="btn btn-outline btn-primary px-8">
+    <a className="btn btn-primary px-8 py-2 text-semibold">
         {/* icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
+        <IoIosLogIn />
         Login
         </a>
   </div>
