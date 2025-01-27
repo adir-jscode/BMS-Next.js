@@ -61,11 +61,11 @@ export default function Navbar() {
   </div>
   <div className="navbar-end">
     {/* login icon */}
-    <a className="btn btn-primary px-8 py-2 text-semibold">
+    <Link href='/login' className="btn btn-primary px-8 py-2 text-semibold">
         {/* icon */}
         <IoIosLogIn />
         Login
-        </a>
+        </Link>
   </div>
     </div>
   
