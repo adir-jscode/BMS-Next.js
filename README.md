@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 BMS-ERP (Bank Management System - ERP)
 
-## Getting Started
+BMS-ERP is a robust **Bank Management System** designed for employees to manage customers, accounts, transactions, loans, and more. This system provides a seamless **ERP solution** for banks with efficient API endpoints for authentication, customer management, and financial transactions.
 
-First, run the development server:
+## 📌 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+✅ **User Authentication & Security**  
+- Signup, Login, OTP Verification  
+- Profile Management  
+
+✅ **Customer & Account Management**  
+- Retrieve all customers & accounts  
+- Update customer information  
+- Create, update, activate, or deactivate accounts  
+
+✅ **Transactions & Loans**  
+- Perform transactions via email  
+- Loan creation and repayment  
+- Retrieve all loans  
+
+✅ **Mail & Reports**  
+- Automated email notifications  
+- Transaction reporting  
+
+---
+
+## 🏰 Tech Stack
+
+- **Backend**: NestJS (Node.js, TypeScript)  
+- **Database**: PostgreSQL / MySQL  
+- **Authentication**: JWT (JSON Web Tokens)  
+- **API Documentation**: Postman  
+- **Deployment**: Docker, AWS  
+
+---
+
+## 📦 Installation & Setup
+
+### 🔹 Prerequisites
+- Install [Node.js](https://nodejs.org/) & [npm](https://www.npmjs.com/)  
+- Install PostgreSQL or MySQL  
+- Install **Postman** for testing APIs  
+
+### 🔹 Clone the Repository
+```sh
+git clone https://github.com/your-username/bms-erp.git
+cd bms-erp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔹 Install Dependencies
+```sh
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🔹 Environment Variables
+Create a `.env` file and configure:
+```
+DATABASE_URL=your_database_url
+JWT_SECRET=your_secret_key
+EMAIL_SERVICE=your_email_service
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_password
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔹 Run the Server
+```sh
+npm run start
+```
 
-## Learn More
+### 🔹 API Documentation
+Import the **Postman Collection** to test APIs.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🐿️ API Endpoints
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔒 **Authentication**
+| Method | Endpoint           | Description |
+|--------|-------------------|-------------|
+| `POST` | `/signup`         | User Registration |
+| `POST` | `/verify-otp`     | OTP Verification |
+| `POST` | `/login`          | User Login |
+| `GET`  | `/profile`        | Get User Profile |
 
-## Deploy on Vercel
+### 👥 **Customer Management**
+| Method | Endpoint                  | Description |
+|--------|---------------------------|-------------|
+| `GET`  | `/customers`               | Get All Customers |
+| `PUT`  | `/customers/update`        | Update Customer Info |
+| `DEL`  | `/customers/delete`        | Delete Customer |
+| `POST` | `/customers/create`        | Create New Customer |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🏦 **Account Management**
+| Method | Endpoint                 | Description |
+|--------|-------------------------|-------------|
+| `POST` | `/account/create`       | Create Account (Email) |
+| `GET`  | `/accounts`             | Get All Accounts |
+| `POST` | `/account/deactivate`   | Deactivate Account |
+| `POST` | `/account/activate`     | Activate Account |
+| `PATCH`| `/account/update`       | Update Account |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 💳 **Transactions & Loans**
+| Method | Endpoint                   | Description |
+|--------|---------------------------|-------------|
+| `POST` | `/transaction/email`       | Perform Transaction via Email |
+| `POST` | `/loan/create`             | Create a New Loan (Email) |
+| `GET`  | `/loans`                   | Get All Loans |
+| `PATCH`| `/loan/repay`              | Loan Repayment |
+
+### 📊 **Reports & Notifications**
+| Method | Endpoint          | Description |
+|--------|------------------|-------------|
+| `POST` | `/mailer/test`   | Send a Test Email |
+| `PATCH`| `/report`        | Generate Transaction Report |
+
+---
+
+## 🚀 Deployment
+To deploy BMS-ERP, follow these steps:
+```sh
+npm run build
+npm start
+```
+For **Docker Deployment**:
+```sh
+docker-compose up -d
+```
+
+---
+
+## 🐝 License
+This project is licensed under the **MIT License**.
+
+---
+
+## 📞 Contact
+For support or contributions, feel free to reach out:
+- 📧 Email: support@bank.com  
+- 🌐 Website: [Bank ERP System](https://yourwebsite.com)  
+- 🐙 GitHub: [Your Repository](https://github.com/your-username/bms-erp)  
+
+---
+
