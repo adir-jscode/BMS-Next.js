@@ -1,7 +1,8 @@
 # 🚀 BMS-ERP (Bank Management System - ERP)
 
 BMS-ERP is a robust **Bank Management System** designed for employees to manage customers, accounts, transactions, loans, and more. This system provides a seamless **ERP solution** for banks with efficient API endpoints for authentication, customer management, and financial transactions.
-
+## 🗂️ Entity-Relationship Diagram (ERD)
+![ERD Diagram](assets/images/erd-diagram.png)
 ## 📌 Features
 
 ✅ **User Authentication & Security**  
