@@ -1,6 +1,29 @@
 // components/Sidebar.js
+"use client";
+
+import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
+
+  const router = useRouter();
+  
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/auth/logout", {
+        method: "GET",
+        credentials: "include", 
+      });
+
+      if (response.ok) {
+        router.push("/login"); 
+      } else {
+        console.error("Logout failed");
+      }
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
+  };
   const navItems = [
     { name: "Home", link: "/" },
     { name: "Dashboard", link: "/employee-dashboard" },
@@ -22,7 +45,9 @@ const Sidebar = () => {
           ))}
         </nav>
         <div className="p-4">
-          <button className="btn btn-outline btn-error w-full">Logout</button>
+        <button onClick={handleLogout} className="btn btn-outline btn-error w-full">
+          Logout
+        </button>
         </div>
       </aside>
     );

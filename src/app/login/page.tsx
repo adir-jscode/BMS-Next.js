@@ -5,19 +5,16 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
-  const [formData, setFormData] = useState({ uniqueId: "", password: "" });
+  const [uniqueId, setUniqueId] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true); // Start loading state
+    setError(null); // Reset previous errors
 
     try {
       const response = await fetch("http://localhost:5000/auth/login", {
@@ -25,27 +22,25 @@ const Page = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        credentials: "include", // Send and receive cookies
+        body: JSON.stringify({ uniqueId, password }),
       });
 
-      console.log(response);
+      const data = await response.json();
 
       if (!response.ok) {
-        const { message } = await response.json();
-        console.log(message);
-        setError(message || "Login failed. Please try again.");
+        setError(data.message || "Login failed. Please try again.");
+        setLoading(false);
         return;
       }
 
-      const { accessToken } = await response.json();
-
-      // Save accessToken to localStorage or cookies
-      localStorage.setItem("accessToken", accessToken);
-
-      // Redirect user to the dashboard or homepage
-      router.push("/dashboard");
-    } catch (err) {
-      setError(`An error occurred while logging in. Please try again.${err}`);
+      // Redirect to dashboard on success
+      router.push("/employee-dashboard");
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      setError("An unexpected error occurred. Please try again.");
+    } finally {
+      setLoading(false); // Stop loading state
     }
   };
 
@@ -71,8 +66,8 @@ const Page = () => {
             <input
               type="text"
               name="uniqueId"
-              value={formData.uniqueId}
-              onChange={handleInputChange}
+              value={uniqueId}
+              onChange={(e) => setUniqueId(e.target.value)}
               placeholder="Your employee ID"
               className="mt-3 w-full input input-bordered"
               required
@@ -85,18 +80,18 @@ const Page = () => {
             <input
               type="password"
               name="password"
-              value={formData.password}
-              onChange={handleInputChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Your password"
               className="w-full mt-3 input input-bordered"
               required
             />
             <br /> <br />
-            <button className="btn btn-primary w-full">Login</button>
+            <button type="submit" className="btn btn-primary w-full" disabled={loading}>
+              {loading ? "Logging in..." : "Login"}
+            </button>
           </form>
-          {error && (
-            <p className="mt-4 text-red-500 text-center">{error}</p>
-          )}
+          {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
         </div>
       </div>
     </div>

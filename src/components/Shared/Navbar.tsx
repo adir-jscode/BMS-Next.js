@@ -13,6 +13,7 @@ export default function Navbar() {
         {name: 'About', link: '/about'},
         {name: 'Services', link: '/services'},
         {name: 'Contact', link: '/contact'},
+        {name: 'Dashbaord', link: '/employee-dashboard'}
     ]
 
  if(!pathName.includes('dashboard'))

@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="mytheme">
+    <html lang="en" data-theme="mytheme" suppressHydrationWarning>
       <body
        className={inter.className}
       >

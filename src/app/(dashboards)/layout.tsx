@@ -1,6 +1,8 @@
+"use client";
 import Header from '@/components/Shared/Header';
 import Sidebar from '@/components/Shared/Sidebar';
 import React from 'react'
+
 
 export default function DashboardLayout({
     children,
