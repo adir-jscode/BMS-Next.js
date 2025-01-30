@@ -1,3 +1,4 @@
+import Sevices from '@/components/Homepage/Sevices';
 import Image from 'next/image';
 import React from 'react';
 
@@ -31,33 +32,11 @@ export default function About() {
 
       {/* Key Features Section */}
       <div className="py-16 bg-base-200">
-        <div className="max-w-screen-xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-primary mb-6">Key Features</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div className="card card-compact bg-base-100 shadow-xl">
-              <div className="card-body">
-                <h3 className="card-title">Employee Account Management</h3>
-                <p className="text-black-600">Streamlined employee and user management system for easy access and control.</p>
-              </div>
-            </div>
-            <div className="card card-compact bg-base-100 shadow-xl">
-              <div className="card-body">
-                <h3 className="card-title">Transaction Monitoring</h3>
-                <p className="text-gray-600">Secure real-time monitoring of all financial transactions for better compliance.</p>
-              </div>
-            </div>
-            <div className="card card-compact bg-base-100 shadow-xl">
-              <div className="card-body">
-                <h3 className="card-title">Data Security</h3>
-                <p className="text-gray-600">High standards of security to protect sensitive banking data and transactions.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Sevices/>
       </div>
 
       {/* Team Section */}
-      <div className="py-16">
+      {/* <div className="py-16">
         <div className="max-w-screen-xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-primary mb-6">Our Dedicated Team</h2>
           <p className="text-lg text-gray-600 mb-12">
@@ -112,7 +91,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
