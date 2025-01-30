@@ -25,47 +25,12 @@ BMS-ERP is a robust **Bank Management System** designed for employees to manage 
 ---
 
 ## 🏰 Tech Stack
-
+- **Frontend**: NextJS
 - **Backend**: NestJS (Node.js, TypeScript)  
 - **Database**: PostgreSQL / MySQL  
 - **Authentication**: JWT (JSON Web Tokens)  
-- **API Documentation**: Postman  
-- **Deployment**: Docker, AWS  
-
+- **API Documentation**: Postman
 ---
-
-## 📦 Installation & Setup
-
-### 🔹 Prerequisites
-- Install [Node.js](https://nodejs.org/) & [npm](https://www.npmjs.com/)  
-- Install PostgreSQL or MySQL  
-- Install **Postman** for testing APIs  
-
-### 🔹 Clone the Repository
-```sh
-git clone https://github.com/your-username/bms-erp.git
-cd bms-erp
-```
-
-### 🔹 Install Dependencies
-```sh
-npm install
-```
-
-### 🔹 Environment Variables
-Create a `.env` file and configure:
-```
-DATABASE_URL=your_database_url
-JWT_SECRET=your_secret_key
-EMAIL_SERVICE=your_email_service
-EMAIL_USER=your_email
-EMAIL_PASS=your_email_password
-```
-
-### 🔹 Run the Server
-```sh
-npm run start
-```
 
 ### 🔹 API Documentation
 Import the **Postman Collection** to test APIs.
@@ -115,29 +80,7 @@ Import the **Postman Collection** to test APIs.
 
 ---
 
-## 🚀 Deployment
-To deploy BMS-ERP, follow these steps:
-```sh
-npm run build
-npm start
-```
-For **Docker Deployment**:
-```sh
-docker-compose up -d
-```
+## 🚀 Backend Code
 
----
-
-## 🐝 License
-This project is licensed under the **MIT License**.
-
----
-
-## 📞 Contact
-For support or contributions, feel free to reach out:
-- 📧 Email: support@bank.com  
-- 🌐 Website: [Bank ERP System](https://yourwebsite.com)  
-- 🐙 GitHub: [Your Repository](https://github.com/your-username/bms-erp)  
-
----
+🐙 GitHub: [Code](https://github.com/adir-jscode/BMS-Web)
 
