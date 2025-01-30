@@ -54,7 +54,7 @@ export default function Navbar() {
           <Link href={'/'}>
               <Image src="/assets/logo.png" alt="logo" width={60} height={100} />
               </Link>
-          <a className="btn btn-ghost text-xl">Uri <span className='text-orange-700'>Bank</span></a>
+          {/* <a className="btn btn-ghost text-xl">Uri <span className='text-orange-700'>Bank</span></a> */}
         </div>
         <div className="navbar-center hidden lg:flex">
           <div className='flex items-center space-x-4'>
