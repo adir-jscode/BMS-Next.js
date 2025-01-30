@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function empDashboard
-() {
+export default function empDashboard() 
+{
   return (
     <div>
         

@@ -16,7 +16,7 @@ const Banner = () => {
           <h1 className="text-5xl font-bold text-primary">
             Empowering Your Banking Experience
           </h1>
-          <p className="py-6 text-lg ">
+          <p className="py-6 text-black">
             Enhance your banking operations with our advanced Bank Management System. Our platform
             offers seamless management of accounts, transactions, and customer services, all designed
             for optimal efficiency and security.

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function About() {
@@ -32,7 +33,11 @@ export default function About() {
             <p className="py-6">
                 With years of expertise in banking software, we provide tailored solutions that empower employees to efficiently manage tasks, customer interactions, and banking services while maintaining the highest standards of data security.
             </p>
-            <button className="btn btn-primary">Learn More</button>
+            {/* href */}
+            <Link href={'/about'}>
+                <button className="btn btn-primary">Learn More</button>
+            </Link>
+           
         </div>
     </div>
 </div>
