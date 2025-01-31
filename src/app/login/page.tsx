@@ -3,6 +3,9 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
+import Loader from "@/components/Shared/loader";
+
 
 const Page = () => {
   const [uniqueId, setUniqueId] = useState("");
@@ -22,25 +25,42 @@ const Page = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include", // Send and receive cookies
+        credentials: "include",
         body: JSON.stringify({ uniqueId, password }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.message || "Login failed. Please try again.");
+        Swal.fire({
+          icon: "error",
+          title: "Login Failed",
+          text: data.message || "Invalid credentials. Please try again.",
+        });
         setLoading(false);
         return;
       }
 
-      // Redirect to dashboard on success
-      router.push("/employee-dashboard");
+      // Show success alert
+      Swal.fire({
+        icon: "success",
+        title: "Login Successful",
+        text: "Redirecting to your dashboard...",
+        timer: 1500,
+        showConfirmButton: false,
+      }).then(() => {
+        router.push("/employee-dashboard");
+      });
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      setError("An unexpected error occurred. Please try again.");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "An unexpected error occurred. Please try again.",
+      });
     } finally {
-      setLoading(false); // Stop loading state
+      setLoading(false);
     }
   };
 
@@ -94,6 +114,8 @@ const Page = () => {
                 disabled={loading}
               >
                 {loading ? "Logging in..." : "Login"}
+                {loading && <Loader />}
+
               </button>
             </form>
             {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
