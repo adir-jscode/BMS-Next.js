@@ -2,10 +2,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Swal from "sweetalert2";
 
 const Sidebar = () => {
 
   const router = useRouter();
+  
+  
   
 
   const handleLogout = async () => {
@@ -15,9 +18,25 @@ const Sidebar = () => {
         credentials: "include", 
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        router.push("/login"); 
+         // Show success alert
+               Swal.fire({
+                 icon: "success",
+                 title: "logout Successful",
+                 text: "Have a great day...",
+                 timer: 1500,
+                 showConfirmButton: true,
+               }).then(() => {
+                 router.push("/login");
+               });
       } else {
+        Swal.fire({
+          icon: "error",
+          title: "Logout Failed",
+          text: data.message || "An unexpected error occurred. Please try again.",
+        }); // Show error alert
         console.error("Logout failed");
       }
     } catch (error) {
