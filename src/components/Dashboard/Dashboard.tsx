@@ -1,14 +1,13 @@
 // pages/dashboard.js
 
 import React from "react";
-import Sidebar from "../Shared/Sidebar";
 import Header from "../Shared/Header";
 
 const Dashboard = () => {
   return (
     <div className="flex bg-gray-100">
       {/* Sidebar */}
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       {/* Main Content */}
       <main className="flex-1 p-6">

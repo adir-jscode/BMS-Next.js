@@ -30,6 +30,12 @@ const Page = () => {
       });
 
       const data = await response.json();
+      console.log("data in login page = ",data);
+      const token = data.accessToken;
+      console.log("token in login page = ",token);
+    if (token) {
+      localStorage.setItem("token", token);  // Save token in localStorage
+    }
 
       if (!response.ok) {
         Swal.fire({
