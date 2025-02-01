@@ -4,24 +4,8 @@ import React, { useEffect, useState } from "react";
 import Loader from "@/components/Shared/loader";
 import Table from "@/components/Shared/Table";
 import { fetchUserTransactions } from "@/app/services/fetchUserTransactions";
+import Transaction from "@/app/types/Transaction";
 
-
-interface Transaction {
-  id: string;
-  type: string;
-  amount: string;
-  description: string;
-  createdAt: string;
-  account: {
-    id: string;
-    accountNumber: string;
-    accountType: string;
-    balance: string;
-    isActive: boolean;
-    createdAt: string;
-    updatedAt: string;
-  };
-}
 
 const Transactions = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);

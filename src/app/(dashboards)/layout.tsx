@@ -5,7 +5,7 @@ import Header from "@/components/Shared/Header";
 import Sidebar from "@/components/Shared/Sidebar";
 import EmpDashboard from "@/components/Dashboard/EmpDashboard";
 import Transactions from "@/components/Dashboard/Transactions";
-import Customers from "@/components/Dashboard/Customers";
+import Customers from "@/components/Dashboard/Customers/Customers";
 
 
 

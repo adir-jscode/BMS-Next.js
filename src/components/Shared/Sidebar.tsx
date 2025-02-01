@@ -67,8 +67,8 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
           </button>
         ))}
       </nav>
-      <div className="p-4">
-        <button onClick={handleLogout} className="btn btn-outline btn-error w-full">
+      <div className="p-4 h-screen my-5">
+        <button onClick={handleLogout} className="btn  btn-error w-full text-left p-2  ">
           Logout
         </button>
       </div>
