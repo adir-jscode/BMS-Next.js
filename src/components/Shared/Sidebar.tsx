@@ -45,14 +45,14 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
   const navItems = [
     { name: "Home", component: "Home" },
     { name: "Dashboard", component: "Dashboard" },
-    { name: "Employees", component: "Employees" },
+    { name: "Customers", component: "Customers" },
     { name: "Transactions", component: "Transactions" },
     { name: "Reports", component: "Reports" },
     { name: "Settings", component: "Settings" },
   ];
 
   return (
-    <aside className="w-64 bg-blue-900 text-white flex flex-col h-screen">
+    <aside className="w-64 bg-blue-900 text-white flex flex-col">
       <div className="p-4 text-center">
         <h2 className="text-xl font-bold">BMS Dashboard</h2>
       </div>

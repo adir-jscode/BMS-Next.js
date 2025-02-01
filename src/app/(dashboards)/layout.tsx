@@ -5,6 +5,7 @@ import Header from "@/components/Shared/Header";
 import Sidebar from "@/components/Shared/Sidebar";
 import EmpDashboard from "@/components/Dashboard/EmpDashboard";
 import Transactions from "@/components/Dashboard/Transactions";
+import Customers from "@/components/Dashboard/Customers";
 
 
 
@@ -19,6 +20,8 @@ export default function DashboardLayout() {
         return <EmpDashboard />;
       case "Transactions":
         return <Transactions />;
+      case "Customers":
+        return <Customers />;
       default:
         return <EmpDashboard />;
     }
