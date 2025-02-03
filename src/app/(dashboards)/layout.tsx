@@ -7,6 +7,7 @@ import EmpDashboard from "@/components/Dashboard/EmpDashboard";
 import Transactions from "@/components/Dashboard/Transactions";
 import Customers from "@/components/Dashboard/Customers/Customers";
 import Accounts from "@/components/Dashboard/Accounts/Accounts";
+import Loans from "@/components/Dashboard/Loans/Loans";
 
 
 export default function DashboardLayout() {
@@ -24,6 +25,8 @@ export default function DashboardLayout() {
         return <Customers />;
       case "Accounts":
         return <Accounts />;
+      case "Loans":
+        return <Loans />;
       
       default:
         return <EmpDashboard />;
