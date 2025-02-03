@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-// import Link from "next/link";
+import { Home, LayoutDashboard, Users, CreditCard, BarChart, LogOut } from "lucide-react"; // Import icons
 import Swal from "sweetalert2";
 
 interface SidebarProps {
@@ -43,33 +43,35 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
   };
 
   const navItems = [
-    { name: "Home", component: "Home" },
-    { name: "Dashboard", component: "Dashboard" },
-    { name: "Customers", component: "Customers" },
-    { name: "Transactions", component: "Transactions" },
-    { name: "Reports", component: "Reports" },
-    { name: "Settings", component: "Settings" },
+    { name: "Home", component: "Home", icon: <Home size={20} /> },
+    { name: "Dashboard", component: "Dashboard", icon: <LayoutDashboard size={20} /> },
+    { name: "Customers", component: "Customers", icon: <Users size={20} /> },
+    { name: "Accounts", component: "Accounts", icon: <CreditCard size={20} /> },
+    { name: "Transactions", component: "Transactions", icon: <CreditCard size={20} /> },
+    { name: "Loans", component: "Loans", icon: <CreditCard size={20} /> },
+    { name: "Reports", component: "Reports", icon: <BarChart size={20} /> },
+    
   ];
 
   return (
-    <aside className="w-64 bg-blue-900 text-white flex flex-col">
+    <aside className="w-64 bg-blue-900 text-white flex flex-col min-h-screen">
       <div className="p-4 text-center">
         <h2 className="text-xl font-bold">BMS Dashboard</h2>
       </div>
-      <nav className="flex-1 space-y-4 p-2">
-      {navItems.map((item, index) => (
+      <nav className="flex-1 space-y-1 p-2">
+        {navItems.map((item, index) => (
           <button
             key={index}
             onClick={() => setActiveComponent(item.component)}
-            className="block w-full text-left p-2 hover:bg-blue-800"
+            className="flex items-center gap-3 w-full text-left p-2 hover:bg-blue-800 rounded-lg transition"
           >
-            {item.name}
+            {item.icon} {item.name}
           </button>
         ))}
       </nav>
-      <div className="p-4 h-screen my-5">
-        <button onClick={handleLogout} className="btn  btn-error w-full text-left p-2  ">
-          Logout
+      <div className="p-4 mt-auto">
+        <button onClick={handleLogout} className="flex items-center gap-3 w-full text-left p-2 bg-red-600 hover:bg-red-700 rounded-lg transition">
+          <LogOut size={20} /> Logout
         </button>
       </div>
     </aside>

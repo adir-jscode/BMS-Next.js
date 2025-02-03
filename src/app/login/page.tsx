@@ -124,6 +124,16 @@ const Page = () => {
 
               </button>
             </form>
+            {/* signup link */}
+            <p className="mt-4 text-black font-bold text-center">
+              Join as Employee{" "}
+              <a
+                href="/signup"
+                className="text-blue-500 hover:underline"
+              >
+                Sign up
+              </a>
+            </p>
             {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
           </div>
         </div>

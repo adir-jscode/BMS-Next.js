@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import { LogOut } from "lucide-react";
 const Header = () => {
   const router = useRouter();
   const handleLogout = async () => {
@@ -39,8 +40,8 @@ const Header = () => {
           <button className="btn btn-outline btn-info">Profile</button>
           {/* <button className="btn btn-primary">Add Employee</button> */}
           
-        <button onClick={handleLogout} className="btn  btn-error   ">
-          Logout
+        <button onClick={handleLogout} className="btn  btn-error">
+        <LogOut size={20} /> Logout
         </button>
     
         </div>

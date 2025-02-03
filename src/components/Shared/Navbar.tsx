@@ -48,7 +48,7 @@ export default function Navbar() {
             </ul>
           </div>
           <Link href={'/'}>
-              <Image src="/assets/logo.png" alt="logo" width={60} height={100} />
+              <Image src={"/assets/logo.jpg"} alt="logo" width={60} height={100} />
               </Link>
           {/* <a className="btn btn-ghost text-xl">Uri <span className='text-orange-700'>Bank</span></a> */}
         </div>
