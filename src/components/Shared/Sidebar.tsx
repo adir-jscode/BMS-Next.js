@@ -20,7 +20,7 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
         method: "GET",
         credentials: "include",
       });
-      logout();
+     
 
       const data = await response.json();
 
@@ -44,6 +44,7 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
     } catch (error) {
       console.error("Error logging out:", error);
     }
+    logout();
   };
 
   const navItems = [

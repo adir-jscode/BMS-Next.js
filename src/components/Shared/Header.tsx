@@ -35,6 +35,7 @@ const Header = () => {
       } catch (error) {
         console.error("Error logging out:", error);
       }
+      logout();
     };
     return (
       <header className="flex justify-between items-center mb-6">
