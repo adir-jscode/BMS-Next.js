@@ -2,7 +2,7 @@ import React from "react";
 
 interface TableProps {
   columns: string[];
-  data: { [key: string]: string | number | boolean }[];
+  data: { [key: string]: string | number | boolean | React.JSX.Element | null }[];
 }
 
 const Table: React.FC<TableProps> = ({ columns, data }) => {
@@ -27,7 +27,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
               <tr key={rowIndex} className="border-b border-gray-700">
                 {columns.map((col, colIndex) => (
                   <td key={colIndex} className="p-2">
-                    {row[col] || "N/A"}
+                    {typeof row[col] === "object" ? row[col] : row[col] || "N/A"}
                   </td>
                 ))}
               </tr>

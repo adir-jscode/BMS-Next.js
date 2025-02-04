@@ -1,5 +1,6 @@
 "use client";
 
+import Customer from "@/app/types/Customer";
 import Image from "next/image";
 import React, { useState } from "react";
 
@@ -7,6 +8,7 @@ interface AddCustomerModalProps {
   isOpen: boolean;
   onClose: () => void;
   onSave: (customerData: CustomerData) => Promise<void>;
+  initialData?: Customer;
 }
 
 export interface CustomerData {
@@ -15,6 +17,7 @@ export interface CustomerData {
   email: string;
   phoneNumber: string;
   address: string;
+
 }
 
 const AddCustomerModal: React.FC<AddCustomerModalProps> = ({ isOpen, onClose, onSave }) => {
