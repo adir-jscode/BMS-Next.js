@@ -1,8 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Home, LayoutDashboard, Users, CreditCard, BarChart, LogOut } from "lucide-react"; // Import icons
+import { LayoutDashboard, Users, CreditCard, BarChart, LogOut } from "lucide-react"; // Import icons
 import Swal from "sweetalert2";
+import { useAuth } from "@/app/context/AuthContext";
 
 interface SidebarProps {
   setActiveComponent: (component: string) => void;
@@ -10,6 +11,8 @@ interface SidebarProps {
 
 const Sidebar = ({ setActiveComponent }: SidebarProps) => {
   const router = useRouter();
+  const{ user,logout } = useAuth();
+  console.log("user",user);
 
   const handleLogout = async () => {
     try {
@@ -17,6 +20,7 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
         method: "GET",
         credentials: "include",
       });
+      logout();
 
       const data = await response.json();
 
@@ -43,7 +47,6 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
   };
 
   const navItems = [
-    { name: "Home", component: "Home", icon: <Home size={20} /> },
     { name: "Dashboard", component: "Dashboard", icon: <LayoutDashboard size={20} /> },
     { name: "Customers", component: "Customers", icon: <Users size={20} /> },
     { name: "Accounts", component: "Accounts", icon: <CreditCard size={20} /> },
@@ -69,6 +72,7 @@ const Sidebar = ({ setActiveComponent }: SidebarProps) => {
           </button>
         ))}
       </nav>
+      {/* user's id */}
       <div className="p-4 mt-auto">
         <button onClick={handleLogout} className="flex items-center gap-3 w-full text-left p-2 bg-red-600 hover:bg-red-700 rounded-lg transition">
           <LogOut size={20} /> Logout

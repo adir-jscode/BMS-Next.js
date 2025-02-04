@@ -1,4 +1,5 @@
 "use client";
+import { useAuth } from '@/app/context/AuthContext';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -7,13 +8,14 @@ import { IoIosLogIn } from 'react-icons/io';
 
 export default function Navbar() {
   const pathName = usePathname();
+  const { user } = useAuth();
+  console.log(user);
   console.log(pathName); 
     const navItems = [
         {name: 'Home', link: '/'},
         {name: 'About', link: '/about'},
         {name: 'Services', link: '/services'},
         {name: 'Contact', link: '/contact'},
-        {name: 'Dashbaord', link: '/employee-dashboard'}
     ]
 
  if(!pathName.includes('dashboard'))
@@ -63,12 +65,19 @@ export default function Navbar() {
           </div>
         </div>
         <div className="navbar-end">
-          {/* login icon */}
-          <Link href='/login' className="btn btn-primary px-8 py-2 text-semibold">
+          {user ? (
+            
+            <Link href='/employee-dashboard' className="btn btn-primary px-8 py-2 text-semibold">
+              Dashboard
+            </Link>
+          ) : (
+            <Link href='/login' className="btn btn-primary px-8 py-2 text-semibold">
               {/* icon */}
               <IoIosLogIn />
               Login
-              </Link>
+            </Link>
+          )}
+         
         </div>
           </div>
         
